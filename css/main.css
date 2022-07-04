@@ -33,6 +33,18 @@
   /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
+/* public-sans-500 - latin */
+@font-face {
+  font-family: 'Public Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: local(''),
+    url('../fonts/public-sans-v13-latin-500.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('../fonts/public-sans-v13-latin-500.woff') format('woff');
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
 /* GENERAL */
 
 html {
@@ -52,6 +64,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Public Sans", "Arial", sans-serif;
+  overflow-x: hidden;
 }
 
 
@@ -87,46 +100,62 @@ body {
 ul,
 ol {
   margin: 0;
-  padding-right: 0;
+  padding-left: 0;
   list-style: none;
 }
 
 .site-header {
-  z-index: 1;
-  padding: 18px  0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
   background-color: #FFFFFF;
 }
 
 .site-header__box {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
-.site-header__logo {
-  margin-right: auto;
+.site-nav {
+  width: 331px;
 }
 
 .site-nav__list {
-  
   display: flex;
 }
 
 .site-nav__item {
-
   margin-right: 30px;
 
 }
 
-.site-nav__item:hover .site-nav__link {
-  color: black;
-  border-color: #30C88F;
+
+
+
+.site-nav__link {
+  position: relative;
+  display: inline-block;
+  padding: 30px 0;
   transition: all 0.3s ease-in-out;
 }
 
-.site-nav__link {
-  padding-bottom: 28px;
-  border-bottom: 4px solid;
-  border-color: transparent;
+.site-nav__link::after {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  content: "";
+  height: 4px;
+  width: 100%;
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.site-nav__link:hover.site-nav__link::after {
+
+  background-image: linear-gradient(135deg, #33D35E 0%, #2AB6D9 99.58%);
   transition: all 0.3s ease-in-out;
 }
 
@@ -142,9 +171,7 @@ ol {
   color: var(--secondary-text-color);
 }
 
-.site-header__invite {
-  margin-left: auto;
-}
+
 
 .site-header__link,
 .hero-box__link {
@@ -167,22 +194,20 @@ ol {
 
 .hero {
   position: relative;
-  padding: 170px 0;
-  background-color: #F2F2F2;
-}
-
-.hero::after{
-  position: absolute;
-  width: 1371px;
-  height: 1038px;
-  top: calc(50% - 580px);
-  left: calc(50% - 85px);
-  content: "";
-  background-image: url("../images/back-img.svg");
-  background-size: cover;
+  padding-top: 250px;
+  padding-bottom: 170px;
+  background-color: #f2f2f2;
+  background-image: url("../images/hero-bg-desktop.svg");
+  background-position: calc(50% + 570px) -180px;
   background-repeat: no-repeat;
 }
 
+.hero__img {
+  position: absolute;
+  z-index: 2;
+  top: calc(50% - 430px);
+  left: calc(50% + 110px);
+}
 
 .hero-box {
   width: 447px;
@@ -207,3 +232,86 @@ ol {
   color: var(--secondary-text-color);
 }
 
+.why {
+  padding: 96px 0;
+  background-color: #F4F5F7;
+}
+
+.why__top {
+  width: 635px;
+}
+
+.why__title {
+  margin-bottom: 16px;
+  font-weight: 100;
+  font-size: 40px;
+  line-height: 64px;
+  letter-spacing: -0.714286px;
+  color: var(--main-text-color);
+}
+
+.why__text {
+  margin-bottom: 72px;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: -0.28125px;
+  color: var(--secondary-text-color);
+}
+
+
+.why__list {
+  display: flex;
+}
+
+.why__item {
+  width: 255px;
+}
+
+.why__item:not(:last-child){
+  margin-right: 30px;
+}
+
+.why__item::before{
+    display: block;
+    width: 72px;
+    height: 72px;
+    margin-bottom: 40px;
+    content: "";
+}
+
+.why__item:first-child::before{
+  background-image: url("../images/online-banking.svg");
+}
+
+.why__item:nth-child(2)::before{
+  background-image: url("../images/simple.svg");
+}
+
+.why__item:nth-child(3)::before{
+  background-image: url("../images/fast.svg");
+}
+
+.why__item:nth-child(4)::before{
+  background-image: url("../images/api.svg");
+}
+
+.why__item__title {
+  margin-bottom: 26px;
+  font-weight: 100;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -0.428571px;
+  color: var(--main-text-color);
+}
+
+.why__item__text {
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: -0.25px;
+  color: var(--secondary-text-color);
+}
+
+.article{
+  padding: 80px 0;
+  background-color: #F2F2F2;
+}
