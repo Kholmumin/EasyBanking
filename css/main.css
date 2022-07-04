@@ -174,7 +174,8 @@ ol {
 
 
 .site-header__link,
-.hero-box__link {
+.hero-box__link,
+.wrapper-right__link {
   display: inline-block;
   padding: 8px 36px 8px 33px;
   font-weight: 500;
@@ -187,7 +188,8 @@ ol {
 }
 
 .site-header__link:hover,
-.hero-box__link:hover {
+.hero-box__link:hover,
+.wrapper-right__link:hover {
   opacity: 0.7;
 }
 
@@ -267,31 +269,31 @@ ol {
   width: 255px;
 }
 
-.why__item:not(:last-child){
+.why__item:not(:last-child) {
   margin-right: 30px;
 }
 
-.why__item::before{
-    display: block;
-    width: 72px;
-    height: 72px;
-    margin-bottom: 40px;
-    content: "";
+.why__item::before {
+  display: block;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 40px;
+  content: "";
 }
 
-.why__item:first-child::before{
+.why__item:first-child::before {
   background-image: url("../images/online-banking.svg");
 }
 
-.why__item:nth-child(2)::before{
+.why__item:nth-child(2)::before {
   background-image: url("../images/simple.svg");
 }
 
-.why__item:nth-child(3)::before{
+.why__item:nth-child(3)::before {
   background-image: url("../images/fast.svg");
 }
 
-.why__item:nth-child(4)::before{
+.why__item:nth-child(4)::before {
   background-image: url("../images/api.svg");
 }
 
@@ -311,7 +313,165 @@ ol {
   color: var(--secondary-text-color);
 }
 
-.article{
+.article {
   padding: 80px 0;
   background-color: #F2F2F2;
+}
+
+.article__heading {
+  margin-bottom: 40px;
+  font-weight: 100;
+  font-size: 40px;
+  line-height: 64px;
+  letter-spacing: -0.714286px;
+  color: var(--main-text-color);
+}
+
+.article__list {
+  display: flex;
+}
+
+.article__item {
+  width: 255px;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+}
+
+.article__item::before {
+  display: block;
+  width: 255px;
+  height: 200px;
+  content: "";
+}
+
+.article__item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.article__item:first-child::before {
+  background-image: url("../images/money.png");
+}
+
+.article__item:nth-child(2)::before {
+  background-image: url("../images/restraunt.png");
+}
+
+.article__item:nth-child(3)::before {
+  background-image: url("../images/airplane.png");
+}
+
+.article__item:nth-child(4)::before {
+  background-image: url("../images/decoration.png");
+}
+
+
+.article__item__box {
+  padding: 24px;
+}
+
+.article__name {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 10px;
+  line-height: 18px;
+  letter-spacing: -0.15625px;
+  color: var(--secondary-text-color);
+}
+
+.article__link {
+  margin-bottom: 8px;
+  font-weight: 100;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.285714px;
+  text-decoration: none;
+  color: var(--main-text-color);
+  transition: color 0.2s ease-in-out;
+}
+
+.article__link:hover,
+.wrapper-link:hover {
+  color: var(--main-green-color);
+  transition: color 0.2s ease-in-out;
+}
+
+.article__text {
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: -0.203125px;
+  color: var(--secondary-text-color);
+}
+
+.site-footer {
+  padding: 48px 0;
+  background-color: var(--main-text-color);
+}
+
+.footer-wrapper-list {
+  display: flex;
+  margin-top: 55px;
+}
+
+.footer-wrapper-item:not(:last-child) {
+  margin-right: 13px;
+}
+
+.footer-wrapper-link {
+  color: #fff;
+  transition: color 0.2s ease-out;
+}
+
+.footer-wrapper-link:hover {
+  color: var(--main-green-color);
+  transition: color 0.2s ease-out;
+}
+
+
+.footer-wrapper {
+  display: flex;
+}
+
+.footer-wrapper__left {
+  margin-right: 130px;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.wrapper-list:first-child {
+  margin-right: 118px;
+}
+
+.wrapper-item:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.wrapper-link {
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 26px;
+  letter-spacing: -0.234375px;
+  color: #FFFFFF;
+  transition: color 0.2s ease-in-out;
+}
+
+.wrapper-right {
+  width: 220px;
+  margin-left: auto;
+  text-align: right;
+}
+
+.wrapper-right__link {
+  margin-bottom: 24px;
+}
+
+.wrapper-right__text {
+  display: block;
+  font-size: 15px;
+  line-height: 26px;
+  text-align: right;
+  letter-spacing: -0.234375px;
+  color: #FFFFFF;
+  opacity: 0.5;
 }
